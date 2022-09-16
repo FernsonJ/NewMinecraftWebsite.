@@ -1,0 +1,77 @@
+w<!--
+  made by 
+  Copyright GNU General Public License v3.0 2020/2021
+  notblockedgames.cf, sts, lilpeen, and Jake Long
+
+If you have questions about the Copyright and if this is copied please direct the question(s) to @jakel181#3600 on discord
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Minecraft</title>
+
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="images/favicon.png" rel="icon" />
+
+  <script>
+    //saves default Math.random
+    window.RandomInt = Math.random;
+  </script>
+
+	<script src="js/libraries/Lodash.js">
+
+	</script>
+	<script src="js/libraries/Crypto.js">
+
+	</script>
+  <script src="js/libraries/SeedRandom.js">
+
+	</script>
+</head>
+
+<body>
+	<canvas id="canvas" width="1000" height="600"></canvas>
+  <canvas id="canvas-2d" width="1000" height="600"></canvas>
+
+	<script type="module">
+		import * as THREE from "/js/libraries/three.module.js";
+    import System from "/js/data/SystemData.js";
+    
+    window.THREE = THREE;
+		window.System = System;
+    
+    //replaces lodash library name
+    window.Lodash = _;
+    delete window._;
+
+    //SeedRandom
+    window.SeedRandom = seed => {
+      Math.seedrandom(seed);
+      return Math.random();
+    };
+    
+
+    window.query = q => document.querySelector(q);
+		window.queryAll = q => document.querySelectorAll(q);
+    
+    window.body = document.body;
+    window.canvas = query("#canvas");
+    window.canvas2D = query("#canvas-2d");
+    window.ctx2D = canvas2D.getContext("2d");
+    
+    addEventListener("error", error => {
+      alert(error.message);
+    });
+	</script>
+
+	<script src="js/startup/initialize.js" type="module">
+
+	</script>
+</body>
+
+</html>
