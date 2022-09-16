@@ -1,0 +1,14 @@
+html, body {
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  background-color: #000000;
+}
+
+canvas, canvas-2d {
+  position: absolute;
+  width: 200vh;
+  height: 100vh;
+  left: calc((100vw - 200vh) / 2);
+  top: 0vh;
+}
